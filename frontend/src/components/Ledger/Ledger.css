@@ -1,0 +1,12 @@
+* {
+    box-sizing: border-box;
+}
+.ledger-page{
+    height: 100vh;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px 1px rgb(0 0 0 / 20%);
+}
+

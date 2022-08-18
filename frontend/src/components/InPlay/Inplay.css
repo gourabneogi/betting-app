@@ -1,0 +1,67 @@
+*{
+    box-sizing: border-box;
+}
+
+.inplay-container{
+  width: auto;
+  height: 100vh;
+  background-color: #E9E9E9;
+}
+
+.CFH-Btn-outer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cricket-football-main-div {
+    text-align: center !important;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+.cricket-button {
+    padding: 10px;
+    width: 170px;
+    border-style: solid;
+    outline: none;
+    border: 0px solid;
+    border-radius: 7px;
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 5px;
+    line-height: 25px;
+}
+
+.cricket-btn-color-change {
+    box-shadow: 0px 2px 2px 1px grey;
+}
+
+.cricket-button , .cricket-btn-color-change{
+    background-color: #fff !important;
+    color: #47388C !important;
+}
+
+.football-button {
+    padding: 10px;
+    width: 170px;
+    border-style: groove;
+    outline: none;
+    border-color: #ffffff;
+    color: #ffffff;
+    border: 0px solid;
+    border-radius: 7px;
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: 5px;
+    margin-right: 5px;
+    line-height: 25px;
+    background-color: #a7a6a6 !important;
+}
+
+.football-img{
+    width: auto;
+    height: 25px;
+    overflow: hidden;
+    float: left!important;
+}
