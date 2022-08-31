@@ -1,0 +1,126 @@
+.container-class {
+  width: auto;
+  height: 71px;
+  background-color: #47388c !important;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%) !important;
+  border-color: #47388c !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper-class {
+  width: 100%;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.image {
+  height: 45px;
+  width: 45px;
+}
+.about-nav {
+  margin-top: 0px;
+  padding-top: 0px;
+  display: inline-block;
+}
+.text1,
+.text2 {
+  /*font-family: "open-sans-semibold"!important;*/
+  font-size: 16px;
+  color: #ffff;
+  margin: 4px 0px 0px;
+  width: 113px;
+  height: 20px;
+  margin-left: 10px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-family: "Roboto", "sans-serif" !important;
+}
+.right-buttons {
+  font-family: "Roboto", "sans-serif" !important;
+}
+
+.button-container {
+  padding: 10px 15px;
+  margin: 15px 15px 15px 0 !important;
+  /* width: 116px;
+    height: 41px; */
+  font-weight: 600;
+  font-size: 0.9em !important;
+  font-size: 16px;
+  position: relative;
+  letter-spacing: 2px;
+  display: block;
+  /* padding: 1em; */
+  transition: color 0.1s;
+  /* margin-right: 12px; */
+  background-color: #ffffff;
+  color: #8388b0;
+  border: none;
+  border-radius: 3px;
+  text-decoration: none;
+  line-height: 20px;
+  text-align: center;
+}
+
+.active {
+  background-color: #9a93e0 !important;
+  color: #ffffff !important;
+}
+.active:hover {
+  color: #ffffff !important;
+  background-color: #2b0055 !important;
+  text-decoration: none;
+}
+
+.button-text {
+  padding: 0 20px;
+  font-size: 16px;
+}
+.btn2 {
+  width: 157px;
+  height: 41px;
+  font-weight: 600;
+  font-size: 16px !important;
+  position: relative;
+  letter-spacing: 2px;
+  display: block;
+  padding: 1em;
+  transition: color 0.1s;
+  margin-right: 12px;
+  background-color: #ffffff;
+  color: #8388b0;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.btn3 {
+  width: 138px;
+  height: 41px;
+  font-weight: 600;
+  font-size: 16px !important;
+  position: relative;
+  letter-spacing: 2px;
+  display: block;
+  padding: 1em;
+  transition: color 0.1s;
+  background-color: #ffffff;
+  color: #8388b0;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin: 0 3px !important;
+}
