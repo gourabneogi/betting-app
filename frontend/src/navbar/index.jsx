@@ -1,6 +1,6 @@
 import React  from "react";
 import styled from "styled-components";
-import { HamburgerMenu } from "../hamburgerMenu/index";
+import { HamburgerMenu } from "../hamburgerMenu";
 
 
 
@@ -93,7 +93,7 @@ height: 10rem;
 const Main = styled.li`
 
 `
-const Navbar = (props) => {
+export function Navbar(props) {
   
   return (
     <NavbarContainer>
@@ -133,5 +133,3 @@ const Navbar = (props) => {
     </NavbarContainer>
   );
 }
-
-export default Navbar;
