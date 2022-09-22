@@ -17,6 +17,9 @@ module.exports = {
             roleID: { 
                 type: Sequelize.INTEGER, 
             },
+            createdByUserID: { 
+                type: Sequelize.STRING, 
+            },
             token: { 
                 type: Sequelize.INTEGER 
             },

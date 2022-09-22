@@ -1,96 +1,59 @@
 import { motion } from "framer-motion";
-import React from "react";
-import { useState } from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import { MenuToggle } from "./menuToggle";
 import { NavMenu } from "./navMenu";
+
 
 const HamburgerMenuContainer = styled.div`
 display:none;
 @media (max-width: 768px) {
   display: flex;
 }
- 
-`;
 
-const HamburgerIcon = styled.div`
-  color: ${({ reverseColor }) => (reverseColor ? "#000" : "#fff")};
-  cursor: pointer;
-  z-index: 99;
-  transition: all 250ms ease-in-out;
 `;
 
 const MenuContainer = styled(motion.div)`
 min-width: 105%;
-  width: 100%;
-  max-width: 44%;
-  height: 100%;
-  box-shadow: -2px 0 2px rgba(15, 15, 15, 0.3);
-  z-index: 90;
-  position: fixed;
-  top: 0;
-  right: 0;
-  transform: translateX(4em);
-  user-select: none;
-  padding: 1em 2.5em;
-  background-color: #47388c;
-  
+width: 100%;
+max-width: 44%;
+height: 100%;
+box-shadow: -2px 0 2px rgba(15, 15, 15, 0.3);
+z-index: 90;
+position: fixed;
+top: 0;
+right: 0;
+transform: translateX(4em);
+user-select: none;
+padding: 1em 2.5em;
+background-color: #47388c;
 
+
+
+@media (max-width: 768px) {
   
-  @media (max-width: 768px) {
-   
-  }
+}
 `;
 
 const TopContainer = styled.div`
-  display: flex;
+display: flex;
   width: 100%;
-`;
-
-const IconContainer = styled.div`
-  font-size: 16px;
-  color: #555;
-  padding-right: 5px;
-`;
-
-const LoginButton = styled(motion.button)`
-  border: 0;
-  background: transparent;
-  color: #555;
-  font-size: 14px;
-  font-weight: 900;
-  transition: all 250ms ease-in-out;
-  display: flex;
-  cursor: pointer;
-  padding: 5px 12px;
-
-  &:hover {
-    color: #666;
-  }
-
-  &:focus {
-    outline: none;
-  }
-
-  &:not(:last-of-type) {
-    border-right: 1px solid #b4b4b4;
-  }
-`;
-
+  `;
+  
 const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 1em;
-`;
-
-const menuVariants = {
-  open: {
-    transform: "translateX(3%)",
-  },
-  closed: {
-    transform: "translateX(103%)",
-  },
-};
+  `;
+  
+  const menuVariants = {
+    open: {
+      transform: "translateX(3%)",
+    },
+    closed: {
+      transform: "translateX(103%)",
+    },
+  };
 
 const menuTransition = {
   type: "spring",
@@ -116,16 +79,19 @@ const commonVariants = {
 
 const commonTransition = { type: "spring", duration: 0.05 };
 
-const HamburgerMenu = (props) => {
+export function HamburgerMenu(props) {
   const [isOpen, setOpen] = useState(false);
-
+  const [reverseColor, setReversecolor] = useState("#000");
+  
   const toggleMenu = () => {
     setOpen(!isOpen);
   };
 
   return (
     <HamburgerMenuContainer>
+    
       <MenuToggle toggle={toggleMenu} isOpen={isOpen} />
+    
       <MenuContainer
         initial={false}
         animate={isOpen ? "open" : "closed"}
@@ -142,5 +108,3 @@ const HamburgerMenu = (props) => {
     </HamburgerMenuContainer>
   );
 }
-
-export default HamburgerMenu;

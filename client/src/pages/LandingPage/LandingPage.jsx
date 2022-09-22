@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './LandingPage.css'
 const LandingPage = () => {
   return (
@@ -7,7 +8,9 @@ const LandingPage = () => {
         <div className='title'>NICE1010</div>
         
         <div id="outer">
-        <div class="button_slide slide_right">LOGIN </div>
+        <Link to="/user/login">
+          <div class="button_slide slide_right" >LOGIN </div>
+        </Link>
         </div>
        </div>
        

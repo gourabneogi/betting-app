@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
             userID: DataTypes.STRING,
             name: DataTypes.STRING,
             roleID: DataTypes.INTEGER,
+            createdByUserID: DataTypes.STRING,
             token: DataTypes.INTEGER,
             maxShare: DataTypes.INTEGER,
             myShare: DataTypes.INTEGER,
