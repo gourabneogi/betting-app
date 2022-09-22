@@ -1,0 +1,333 @@
+* {
+    box-sizing: border-box;
+    
+}
+body{
+    margin: 0px !important;
+}
+.wrapper-content {
+    padding: 20px 10px 40px;
+}
+.fadeInRight {
+    animation-name: fadeInRight;
+}
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    z-index: 100;
+}
+.ibox-tools {
+    display: block;
+    float: none;
+    margin-top: 0;
+    position: relative;
+    padding: 0;
+    text-align: right;
+}
+.ibox-tools a.btn-primary {
+    color: #fff;
+}
+
+.float-e-margins .btn {
+    margin-bottom: 5px;
+}
+.ibox-tools a {
+    cursor: pointer;
+    margin-left: 5px;
+    
+}
+.btn-primary {
+    background-color: #1FABB5;
+    border-color: #1ab394;
+    
+}
+.btn {
+    border-radius: 3px;
+}
+.btn-xs {
+    padding: 1px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    
+}
+.btn {
+    display: inline-block !important;
+    padding: 6px 12px ;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.table-responsive {
+    min-height: .01%;
+    overflow-x: auto;
+}
+.dataTables_wrapper {
+    padding-bottom: 30px;
+}
+div.dt-buttons {
+    position: relative;
+    float: left;
+}
+a.dt-button {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-right: 0.333em;
+    padding: 0.5em 1em;
+    border: 1px solid #999;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 0.88em;
+    color: black;
+    white-space: nowrap;
+    overflow: hidden;
+    user-select: none;
+    text-decoration: none;
+    outline: none;
+    background-image: linear-gradient(to bottom, #fff 0%, #e9e9e9 100%);
+}
+.dataTables_wrapper, .dataTables_filter, label {
+    font-weight: normal;
+    white-space: nowrap;
+    text-align: right;
+}
+.dataTables_filter, label {
+    margin-right: 5px;
+}
+
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+}
+.dataTables_wrapper .dataTables_filter input {
+    margin-left: 0.5em;
+    display: inline-block;
+    width: auto;
+}
+@media (min-width: 768px){
+.form-inline .form-control {
+    vertical-align: middle;
+}
+}
+.form-control, .single-line {
+    background-color: #FFFFFF;
+    background-image: none;
+    border: 1px solid #e5e6e7;
+    border-radius: 1px;
+    color: inherit;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    font-size: 14px;
+}
+table.table-bordered.dataTable {
+    border-collapse: separate !important;
+}
+table.dataTable {
+    clear: both;
+    margin-top: 6px !important;
+    margin-bottom: 6px !important;
+    max-width: none !important;
+}
+.table-bordered {
+    border: 1px solid #EBEBEB;
+}
+.table {
+    width: 100%;
+}
+table {
+    background-color: transparent;
+    border-spacing: 0;
+    
+}
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr {
+    text-align: left;
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+.table>thead:first-child>tr:first-child>th {
+    border-top: 0;
+}
+table.table-bordered.dataTable th {
+    border-left-width: 0;
+}
+table.dataTable thead .sorting_asc{
+    cursor: pointer;
+    position: relative;
+}
+table.dataTable thead > tr > th{
+    padding-right: 30px;
+}
+.table > thead > tr > th{
+    line-height: 1.42857;
+    padding: 8px;
+    vertical-align: top;
+}
+.table > thead > tr > th {
+    border-bottom: 1px solid #DDDDDD;
+}
+.table-bordered > thead > tr > th{
+    border: 1px solid #e7e7e7;
+    background-color: #F5F5F6;
+}
+table.dataTable thead .sorting_asc:after {
+    content: "\e155";
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    display: block;
+    font-family: 'Glyphicons Halflings';
+    opacity: 0.5;
+    background: transparent;
+}
+table.dataTable thead .sorting{
+    background: transparent;
+}
+.table-striped>tbody>tr:nth-of-type(odd) {
+    text-align: left;
+    background-color: #f9f9f9;
+}
+table.table-bordered.dataTable tbody td {
+    padding: 8px;
+    border-bottom-width: 0;
+}
+table.table-bordered.dataTable td {
+    border-left-width: 0;
+}
+table > tbody > tr > td{
+    border-top: 1px solid #e7eaec;
+    line-height: 1.42857;
+    padding: 8px;
+    vertical-align: top;
+}
+.table-bordered > tbody > tr > td{
+    border: 1px solid #e7e7e7;
+}
+a {
+    cursor: pointer;
+    color: #337ab7;
+    text-decoration: none;
+}
+.float-e-margins .btn1 {
+    margin-bottom: 5px;
+}
+.btn-white {
+    color: inherit;
+    background: white;
+    border: 1px solid #e7eaec;
+}
+.btn-sm{
+    min-width: 56px;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+.btn1{
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 3px;
+}
+div.dataTables_wrapper div.dataTables_info {
+    text-align: left;
+    padding-top: 8px;
+    white-space: nowrap;
+}
+.dataTables_wrapper .dataTables_paginate {
+    margin: 0;
+    white-space: nowrap;
+    text-align: right;
+}
+.pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+.dataTables_wrapper .dataTables_paginate ul.pagination {
+    margin: 2px 0;
+    white-space: nowrap;
+}
+.pagination>li {
+    display: inline;
+}
+.pagination>li:first-child>a{
+    margin-left: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+.pagination>.disabled>a{
+    color: #777;
+    cursor: not-allowed;
+    background-color: #fff;
+    border-color: #ddd;
+}
+.pagination > li > a{
+    border: 1px solid #DDDDDD;
+    float: left;
+    line-height: 1.42857;
+    padding: 4px 10px;
+    position: relative;
+    text-decoration: none;
+}
+.pace-done li.active{
+    transition: all 0.5s;
+}
+.pagination>li {
+    display: inline;
+}
+.pagination > .active > a{
+    background-color: #f4f4f4;
+    border-color: #DDDDDD;
+    color: inherit;
+    cursor: default;
+    z-index: 2;
+}
+.pagination>li:last-child>a{
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.pagination>.disabled>a{
+    color: #777;
+    cursor: not-allowed;
+    background-color: #fff;
+    border-color: #ddd;
+}
+.btn-w-m {
+    min-width: 140px;
+    min-height: 34px !important;
+}
+.ibox-title h5{
+    display: inline-block;
+    font-size: 14px;
+    margin: 0 0 7px !important;
+    padding: 0;
+    text-overflow: ellipsis;
+    float: left;
+}

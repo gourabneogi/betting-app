@@ -1,12 +1,14 @@
-import Home from "./component/Home/Home";
-import Sliderbar from "./component/Slidebar/Sliderbar";
+import { Dashboard } from "@mui/icons-material";
+
+import Routing from "./component/Routing/Routing";
+
 
 
 
 function App() {
   return (
     <div className="wrapper">
-     <Home/>
+     <Routing/>
   </div>
   
   );
