@@ -1,16 +1,14 @@
 import React from "react";
 import Header from "../Header/Header";
-import Sliderbar from "../Slidebar/Sliderbar";
-import homeData from "../Data/Home.data";
 import "./Home.css";
-import { valueToPercent } from "@mui/base";
-import Try from "../SlideMenu/Try";
+import SlideManu from "../SlideMenu/SlideMenu";
+
 const Home = () => {
   return (
     <div className="pace-done">
       <div id="wrapper">
         
-          <Try />
+          <SlideManu />
         
         <div id="page-wrapper" className="gray-bg dashbard-1">
           <Header/>

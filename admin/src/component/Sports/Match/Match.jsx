@@ -1,13 +1,13 @@
 import React from 'react'
-import Header from '../Header/Header'
-import Try from '../SlideMenu/Try'
-
+import Header from '../../Header/Header'
+import SlideMenu from '../../SlideMenu/SlideMenu'
+import Footer from '../../Footer/Footer'
 const Match = () => {
   return (
     <div className='pace-done'>
       <div id="wrapper">
   {/* START Template Canvas */}
-  <Try/>
+  <SlideMenu/>
   <div
     id="page-wrapper"
     className="gray-bg dashbard-1"
@@ -550,15 +550,7 @@ const Match = () => {
     </div>
     {/*  */}
     {/*/ END Template Main Content */}
-    <div className="footer">
-      <div className="pull-right">
-        Stockist Panel <strong>v1.2.0.0</strong>
-      </div>
-      <div>
-        <strong>NICE1010</strong> | Powered By <strong> NICE Gaming </strong> |
-        Copyright © 2014-2021{" "}
-      </div>
-    </div>
+    <Footer />
   </div>
   {/*/ END Template Canvas */}
 </div>

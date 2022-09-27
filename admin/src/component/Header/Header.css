@@ -90,6 +90,7 @@ a {
 .fa-bars:before {
     content: "\f0c9";
 }
+
 @media (min-width: 768px){
 .navbar-right {
     float: right!important;
