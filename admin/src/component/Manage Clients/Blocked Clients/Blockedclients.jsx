@@ -1,50 +1,47 @@
-import React from "react";
-import Footer from "../Footer/Footer";
-import Header from "../Header/Header";
-import Sliderbar from "../Slidebar/Sliderbar";
-import SlideMenu from "../SlideMenu/SlideMenu";
-import "./Agent.css";
+import React from 'react'
+import Footer from '../../Footer/Footer'
+import Header from '../../Header/Header'
+import SlideMenu from '../../SlideMenu/SlideMenu'
 
-const Agent = () => {
+const Blockedclients = () => {
   return (
     <div className="pace-done">
-      <div id="wrapper">
-       
-          <SlideMenu />
-        
-        <div id="page-wrapper" className="gray-bg dashbard-1">
+    <div id="wrapper">
+      <SlideMenu />
+
+      <div id="page-wrapper" className="gray-bg dashbard-1">
         <Header />
 
-          <div className="row wrapper border-bottom white-bg page-heading">
-            <div className="col-lg-10">
-              <h2>Agent</h2>
-              <ol className="breadcrumb">
-                <li>
-                  
-                  <a href="/agent/dashboard">Dashboard</a>
-                </li>
-                <li>
-                  <strong>Agent</strong>
-                </li>
-              </ol>
-            </div>
-            <div className="col-lg-2"></div>
-          </div>
+        <div className="row wrapper border-bottom white-bg page-heading">
+  <div className="col-lg-10">
+    <h2>CLIENTS</h2>
+    <ol className="breadcrumb">
+      <li>
+        <a href="/agent/dashboard">Dashboard</a>
+      </li>
+      <li>
+        <a href="#">
+          <strong>Blocked Clients</strong>
+        </a>
+      </li>
+      {/* <li class="active">
+                      <strong></strong>
+                  </li> */}
+    </ol>
+  </div>
+  <div className="col-lg-2"></div>
+</div>
 
-          <div className="wrapper wrapper-content animated fadeInRight">
+<div className="wrapper wrapper-content animated fadeInRight">
   <div className="row">
     <div className="col-lg-12">
       <div className="ibox float-e-margins">
         <div className="ibox-title">
-          <h5>All Agents</h5>
-          <div className="ibox-tools">
-            <a
-              href="/agent/agents/newagent"
-              className="btn1 btn-primary btn-xs"
-            >
-              Create Agent
-            </a>
-          </div>
+          <h5>Blocked Users</h5>
+          {/* <div class="ibox-tools">
+                              <a href="" class="btn btn-primary btn-xs" >Create new User</a>
+                      
+                  </div> */}
         </div>
         <div className="ibox-content table-responsive">
           <div
@@ -89,72 +86,67 @@ const Agent = () => {
               <thead>
                 <tr role="row">
                   <th
-                    className="sorting_asc"
-                    style={{ width: 23 }}
+                    className="sorting_disabled"
+                    rowSpan={1}
+                    colSpan={1}
+                    style={{ width: 29 }}
                   >
                     ID
                   </th>
                   <th
-                    className="sorting"
-                    style={{ width: 100 }}
+                    className="sorting_disabled"
+                    rowSpan={1}
+                    colSpan={1}
+                    style={{ width: 102 }}
                   >
                     User Name
                   </th>
                   <th
-                    className="sorting"
-                    style={{ width: 53 }}
+                    className="sorting_disabled"
+                    rowSpan={1}
+                    colSpan={1}
+                    style={{ width: 59 }}
                   >
                     Name
                   </th>
                   <th
-                    className="sorting"
-                    style={{ width: 71 }}
+                    className="sorting_disabled"
+                    rowSpan={1}
+                    colSpan={1}
+                    style={{ width: 169 }}
                   >
-                    Fix Limit
+                    Match Commission
                   </th>
                   <th
-                    className="sorting"
-                    style={{ width: 77 }}
+                    className="sorting_disabled"
+                    rowSpan={1}
+                    colSpan={1}
+                    style={{ width: 185 }}
                   >
-                    My Share
+                    Session Commission
                   </th>
                   <th
-                    className="sorting"
-                    style={{ width: 85 }}
+                    className="sorting_disabled"
+                    rowSpan={1}
+                    colSpan={1}
+                    style={{ width: 60 }}
                   >
-                    Max Share
+                    Share
                   </th>
                   <th
-                    className="sorting"
-                    style={{ width: 242 }}
+                    className="sorting_disabled"
+                    rowSpan={1}
+                    colSpan={1}
+                    style={{ width: 75 }}
                   >
                     Actions
                   </th>
                 </tr>
               </thead>
               <tbody>
-                <tr role="row" className="odd">
-                  <td className="sorting_1">5915</td>
-                  <td className="agent_name">
-                    <a href="#">BSC5915 (Test1)</a>
-                  </td>
-                  <td>test1 test2</td>
-                  <td>300.0</td>
-                  <td>30.0</td>
-                  <td>30.0</td>
-                  <td className="">
-                    <a
-                      className="btn btn-white btn-sm"
-                      href="#"
-                    >
-                      <i className="fa fa-pencil-square" /> Edit
-                    </a>
-                    &nbsp;&nbsp; &nbsp;&nbsp;
-                    <a href="#">
-                      <button type="button" className="btn btn-w-m btn-primary" style={{minWidth : 140}}>
-                        Change Password
-                      </button>
-                    </a>
+                <tr className="odd">
+                  <td valign="top" colSpan={7} className="dataTables_empty">
+                    No data available in table
                   </td>
                 </tr>
               </tbody>
@@ -162,8 +154,10 @@ const Agent = () => {
             <div
               className="dataTables_info"
               id="DataTables_Table_0_info"
+              role="status"
+              aria-live="polite"
             >
-              Showing 1 to 1 of 1 entries
+              Showing 0 to 0 of 0 entries
             </div>
             <div
               className="dataTables_paginate paging_simple_numbers"
@@ -174,16 +168,13 @@ const Agent = () => {
                   className="paginate_button previous disabled"
                   id="DataTables_Table_0_previous"
                 >
-                  <a 
-                   href="#">
-                    Previous
-                  </a>
-                </li>
-                <li className="paginate_button active">
                   <a
                     href="#"
+                    aria-controls="DataTables_Table_0"
+                    data-dt-idx={0}
+                    tabIndex={0}
                   >
-                    1
+                    Previous
                   </a>
                 </li>
                 <li
@@ -192,6 +183,9 @@ const Agent = () => {
                 >
                   <a
                     href="#"
+                    aria-controls="DataTables_Table_0"
+                    data-dt-idx={1}
+                    tabIndex={0}
                   >
                     Next
                   </a>
@@ -204,11 +198,13 @@ const Agent = () => {
     </div>
   </div>
 </div>
-        <Footer/> 
-        </div>
+
+<Footer />
+
       </div>
     </div>
-  );
-};
+    </div>
+  )
+}
 
-export default Agent;
+export default Blockedclients

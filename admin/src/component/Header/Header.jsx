@@ -36,7 +36,9 @@ const Header = () => {
                     href="/agents/sign_out"
                     rel="nofollow"
                   >
-                    Sign out
+                  
+                    <i className="fa fa-sign-out" /> Sign out
+                  
                   </a>
                 </li>
               </ul>

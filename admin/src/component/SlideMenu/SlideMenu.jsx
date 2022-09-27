@@ -1,9 +1,11 @@
 import React from 'react'
-import "./Try.css"
+import "./SlideMenu.css"
 import KeyboardArrowDownTwoToneIcon from '@mui/icons-material/KeyboardArrowDownTwoTone';
 import HomeIcon from '@mui/icons-material/Home';
+import { Accordion, AccordionDetails, AccordionSummary } from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-const Try = () => {
+const SlideMenu = () => {
   return (
     <nav className="navbar-default navbar-static-side" role="navigation">
   <div className="sidebar-collapse">
@@ -52,46 +54,42 @@ const Try = () => {
         </a>
       </li>
       <li >
-        <a href="#user_type">
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <i className="fa fa-users" />
           <span className="nav-label">Manage</span>
-          <KeyboardArrowDownTwoToneIcon className='fa arrow'/>
-        </a>
-        <ul
-          className="nav nav-second-level collapse in"
-          id="user_type"
-          style={{}}
-        >
-          <li cl>
-            <a href="/agent/agents?role=agent" data-method="get">
+          </AccordionSummary>
+          <AccordionDetails>
+          <a href="/agent/agents?role=agent" data-method="get">
               <i className="fa fa-users" />
               Agent
             </a>
-          </li>
-        </ul>
+          </AccordionDetails>
+        </Accordion> 
       </li>
       <li >
-        <a href="#user_type1">
-          <i className="" />
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <i className="fa fa-users" />
           <span className="nav-label">Sports</span>
-          <KeyboardArrowDownTwoToneIcon className='fa arrow'/>
-        </a>
-        <ul className="nav nav-second-level collapse" id="user_type1">
-          <li cl>
-            <a href="/agent/matches" data-method="get">
-              <i className="" />
+          </AccordionSummary>
+          <AccordionDetails>
+          <a href="/agent/matches" data-method="get">
+              <i className="fa fa-users" />
               Matches
             </a>
-          </li>
-          <li cl>
-            <a href="/agent/tournaments" data-method="get">
-              <i className="" />
-              Tournament
+          </AccordionDetails>
+          <AccordionDetails>
+          <a href="/agent/tournaments" data-method="get">
+              <i className="fa fa-users" />
+            Tournament
             </a>
-          </li>
-       
-        </ul>
+          </AccordionDetails>
+        </Accordion> 
       </li>
+
+ 
+      
       
       <li >
         <a href="#user_type1">
@@ -177,34 +175,34 @@ const Try = () => {
           </li>
         </ul>
       </li>
+
       <li >
-        <a href="#user_type2">
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <i className="fa fa-users" />
-          <span className="nav-label">Manage Clients</span>{" "}
-          <KeyboardArrowDownTwoToneIcon className='fa arrow'/>
-        </a>
-        <ul className="nav nav-second-level collapse" id="user_type2">
-          <li cl>
-            <a href="/agent/users?users=direct" data-method="get">
+          <span className="nav-label">Manage Clients</span>
+          </AccordionSummary>
+          <AccordionDetails>
+          <a href="/agent/users" data-method="get">
               <i className="fa fa-users" />
-              My Clients
+             My Clients
             </a>
-          </li>
-          <li cl>
-            <a href="/agent/users/blocked_clients" data-method="get">
+          </AccordionDetails>
+          <AccordionDetails>
+          <a href="/agent/users/blocked_clients" data-method="get">
               <i className="fa fa-users" />
-              Blocked Clients
+            Blocked Clients
             </a>
-          </li>
-          <li cl>
-            <a href="/agent/users/update_client_limit" data-method="get">
-              <i className="fa fa-money" />
-              Commission &amp; Limits
+          </AccordionDetails>
+          <AccordionDetails>
+          <a href="/agent/users/update_client_limit" data-method="get">
+              <i className="fa fa-users" />
+            Commision & limits
             </a>
-          </li>
-        
-        </ul>
+          </AccordionDetails>
+        </Accordion> 
       </li>
+   
 
       <li >
         <a href="/agent/dashboard/manage_password_panel" data-method="get">
@@ -218,49 +216,39 @@ const Try = () => {
           <span className="nav-label">Language</span>
         </a>
       </li>
+
       <li >
-        <a href="#user_type">
-          <i className="fa fa-book" />{" "}
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <i className="fa fa-users" />
           <span className="nav-label">Manage Ledgers</span>
-          <KeyboardArrowDownTwoToneIcon className='fa arrow'/>
-        </a>
-        <ul className="nav nav-second-level collapse" id="user_type">
-          <li cl>
-            <a href="/agent/ledgers/collection_report" data-method="get">
-              <i className="fa fa-inr" />
-              Collection Report
+          </AccordionSummary>
+          <AccordionDetails>
+          <a href="/agent/ledgers/collection_report" data-method="get">
+              <i className="fa fa-users" />
+            Collection Report
             </a>
-          </li>
-          <li className="active">
-            <a href="/agent/ledgers" data-method="get">
-              <i className="fa fa-book" />
-              My Ledgers
+          </AccordionDetails>
+          <AccordionDetails>
+          <a href="/agent/ledgers" data-method="get">
+              <i className="fa fa-users" />
+            My Ledgers
             </a>
-          </li>
-          <li className="active">
-            <a
-              href='/agent/ledgers/earning_report?event_type=["cricket","football"]'
-              data-method="get"
-            >
-              <i className="fa fa-inr" />
-              Profit &amp; Loss
+          </AccordionDetails>
+          <AccordionDetails>
+          <a href="/agent/ledgers/earning_report" data-method="get">
+              <i className="fa fa-users" />
+            Profit & Loss
             </a>
-          </li>
-          <li className="active">
-            <a
-              href='/agent/ledgers/games_daily_report?event_type=["single_digit","TeenPatti"]&event_sub_type=["TeenPatti-T-20"]'
-              data-method="get"
-            >
-              <i className="fa fa-inr" />
-              Games Daily Report
+          </AccordionDetails>
+          <AccordionDetails>
+          <a href="/agent/ledgers/games_daily_report" data-method="get">
+              <i className="fa fa-users" />
+            Games Daily Report
             </a>
-          </li>
-        </ul>
+          </AccordionDetails>
+        </Accordion> 
       </li>
-    
-
-
-
            
    
     </ul>
@@ -270,4 +258,4 @@ const Try = () => {
   )
 }
 
-export default Try
+export default SlideMenu

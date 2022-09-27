@@ -1,0 +1,88 @@
+.pull-right {
+    left: auto;
+    right: 0;
+    padding-right: 15px;
+    padding-left: 0;
+    border-right: 5px solid #eee;
+    border-left: 5px solid #eee;
+    text-align: right;
+    margin-left: 10px;
+    float: left!important;
+    width: calc(22% - 25px);
+}
+.my_ledgers_dated_picker {
+    background: none repeat scroll 0% 0% #FFF;
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px solid #CCC;
+    margin: 10px 0px 0px 25px;
+}
+.glyphicon.fa {
+    font-family: "FontAwesome";
+}
+.glyphicon {
+    position: relative;
+    top: 1px;
+}
+.caret {
+    margin-left: 4% !important;
+}
+.col-md-4{
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.search_date_btn {
+    padding: 5px 25px;
+    margin-left: 15px;
+    font-size: 10px;
+    min-width: 90px;
+}
+@media (min-width: 1200px){
+.col-lg-4 {
+    width: 33.33333333%;
+}
+}
+.col-lg-4{
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.ibox-tools a {
+    cursor: pointer;
+    margin-left: 5px;
+    color: #c4c4c4;
+}
+.fa-wrench:before {
+    content: "\f0ad";
+}
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+table {
+    background-color: transparent;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+.table>thead:first-child>tr:first-child>th {
+    border-top: 0;
+}
+.table > thead > tr > th{
+    line-height: 1.42857;
+    padding: 8px;
+    vertical-align: top;
+    border-bottom: 1px solid #DDDDDD;
+}
+th {
+    text-align: left;
+}
+.table > tfoot > tr > th{
+    border-top: 1px solid #e7eaec;
+    line-height: 1.42857;
+    padding: 8px;
+    vertical-align: top;
+}
