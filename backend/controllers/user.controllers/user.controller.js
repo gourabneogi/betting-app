@@ -3,6 +3,7 @@ const { Op } = require("sequelize");
 const db = require('../../database/db_config/db.connect');
 
 var userModel = require("../../database/models/user_table")(db, sequelize.DataTypes);
+var userBlockModel = require("../../database/models/user_block_logging_table")(db, sequelize.DataTypes);
 var commissionModel = require("../../database/models/commission_table")(db, sequelize.DataTypes);
 var paymentModel = require("../../database/models/payment_table")(db, sequelize.DataTypes);
 
@@ -83,12 +84,48 @@ exports.update = async(req, res, next)=>{
     return next()
 }
 
-exports.viewAllUser = async(req, res, next)=>{
-    try{
-        const allusers = await userModel.findAll({raw:true, where:{
-            roleID: {[Op.gt]: req.body.role.id}
-        }, order: [["updateAt", "DESC"], ["createAt", "DESC"]]})
-        return res.status(200).send(allusers)
+exports.vierOne = async (req, res, next) => {
+    try {
+        var userDetails; 
+        var userBlockDetails;
+        if ([ 1 ].includes(req.body.role.id)) {
+            userDetails = await userModel.findOne({
+                raw:true,
+                where:{
+                    userID: req.body.data.userID
+                },
+                status: true
+            })
+        }
+        else {
+            userDetails = await userModel.findOne({
+                raw: true,
+                where: {
+                    roleID: { [ Op.gt ]: req.body.role.id },
+                    createdByUserID: req.body.userID,
+                    userID: req.body.data.userID
+                },
+                status: true
+            })
+        }
+        if (userDetails) {
+            userBlockDetails = await userBlockModel.findOne({
+                raw:true,
+                where:{
+                    userID: req.body.data.userID
+                },
+                attributes: {exclude: ["userID"]}
+            })
+            if (userBlockDetails) {
+                for (var key in userBlockDetails) {
+                    userDetails[key] = userBlockDetails[key]
+                }
+            }
+        }
+        else {
+            throw(`unable to read user : ${req.body.data.userID}`)
+        }
+        return res.status(200).send(userDetails)
     } catch(err){
         return res.status(401).send(err.message)
     }
@@ -97,4 +134,77 @@ exports.viewAllUser = async(req, res, next)=>{
 exports.delete = async(req, res, next)=>{
     const user = await userModel.update({status: false}, {where: {userId: req.body.data.userId}})
     return next()
+}
+
+exports.changePassword = async (req, res, next) => {
+    try {
+        var user = await userModel.findOne({ raw: true, where: { userID: req.body.data.userID } })
+        if (user.userID != req.body.userID && user.roleID > req.body.role.id) {
+            await userModel.update({password: req.body.data.newPasssword}, {where: {userID: user.userID}})
+        }
+        else if (user.userID == req.body.userID && user.passsword == req.body.data.oldPassword) {
+            await userModel.update({password: req.body.data.newPasssword}, {where: {userID: user.userID}})
+        }
+        else {
+            throw {message: "unable to chanage password"}
+        }
+        return res.status(200).send({ message: "password change successfully" })
+    }
+    catch (err) {
+        return res.status(401).send(err.message)
+    }
+}
+
+exports.ChildRoles = async (req, res, next) => {
+    try {
+        var manageRoleList = [];
+        if ([ 1 ].includes(req.body.role.id)) {
+            manageRoleList = [ 1, 2, 3, 4, 5, 6 ]
+        }
+        else {
+            const chileds = await userModel.findAll({
+                raw: true,
+                where: {
+                    roleID: { [ Op.gt ]: req.body.role.id },
+                    createdByUserID: req.body.userID,
+                    status: true
+                },
+                attributes: ["roleID"]
+            })
+            if (chileds.length > 0) {
+                manageRoleList = [...new Set(Object.values(chileds))];
+            }
+        }
+        return res.status(200).send(manageRoleList)
+    } catch(err){
+        return res.status(401).send(err.message)
+    }
+}
+
+exports.viewAllUser = async(req, res, next)=>{
+    try {
+        var allusers; 
+        if ([ 1 ].includes(req.body.role.id)) {
+            allusers = await userModel.findAll({
+                raw: true,
+                where: {
+                    roleID: { [ Op.gt ]: req.body.role.id }
+                },
+                order: [ [ "updateAt", "DESC" ], [ "createAt", "DESC" ] ]
+            })
+        }
+        else {
+            allusers = await userModel.findAll({
+                raw: true,
+                where: {
+                    roleID: { [ Op.gt ]: req.body.role.id },
+                    status: true
+                },
+                order: [ [ "updateAt", "DESC" ], [ "createAt", "DESC" ] ]
+            })
+        }
+        return res.status(200).send(allusers)
+    } catch(err){
+        return res.status(401).send(err.message)
+    }
 }

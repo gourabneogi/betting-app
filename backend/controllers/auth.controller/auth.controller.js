@@ -3,12 +3,17 @@ const sequelize = require('sequelize');
 const db = require('../../database/db_config/db.connect');
 const userModel = require("../../database/models/user_table")(db, sequelize.DataTypes);
 const roleModel = require("../../database/models/role_table")(db, sequelize.DataTypes);
+const blockModel = require("../../database/models/user_block_logging_table")(db, sequelize.DataTypes);
 
 exports.login = async (req, res, next)=>{
     const {userId, password} = req.body
-    const user = await userModel.findOne({raw: true, where: { userId : userId } });
+    const user = await userModel.findOne({ raw: true, where: { userId: userId } });
+    const userblock = await blockModel.findOne({raw: true, where: { userId : userId } });
     if(user == null){
         return res.status(401).send({message: "authentication failure: Invalid userId"})
+    }
+    else if (userblock != null && userblock.profileBlock) {
+        return res.status(401).send({message: "profile has been suspended"})
     }
     else if (user.password != password){
         return res.status(401).send({message: "authentication failure: Invalid password"})
@@ -21,6 +26,7 @@ exports.login = async (req, res, next)=>{
         return res.status(200).send({data:user})
     }
 }
+
 exports.verifyLogin = async (req, res, next)=>{
     const token = req.body.token;
     try {

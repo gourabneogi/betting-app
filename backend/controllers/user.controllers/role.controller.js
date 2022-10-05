@@ -7,7 +7,8 @@ roleModel = roleModel(db, sequelize.DataTypes);
 exports.read = async (req,res,next)=>{
     try{
         const allusers = await roleModel.findAll({raw:true, where:{
-            roleID: {[Op.gt]: req.body.role.id}
+            roleID: { [ Op.gt ]: req.body.role.id },
+            active: true
         }, order: [["updateAt", "DESC"], ["createAt", "DESC"]]})
         return res.status(200).send(allusers)
     } catch(err){
